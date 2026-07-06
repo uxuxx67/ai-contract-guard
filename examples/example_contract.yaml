@@ -1,0 +1,44 @@
+# Example contract: a customer-support answer bot.
+# This describes what a *valid* response for the "support_answer" use case
+# must look like, so contract_guard can catch drift/regressions automatically.
+name: support_answer
+description: >-
+  Contract for a customer support bot that must return a JSON object with
+  an answer, a confidence score, and never hallucinate refund promises.
+
+json_schema:
+  type: object
+  properties:
+    answer:
+      type: string
+    confidence:
+      type: number
+      minimum: 0
+      maximum: 1
+    escalate:
+      type: boolean
+  required: [answer, confidence]
+
+required_fields:
+  - answer
+  - confidence
+
+forbidden_patterns:
+  - "as an ai language model"
+  - "guaranteed refund"
+  - "100% refund"
+
+required_patterns: []
+
+min_length: 10
+max_length: 4000
+
+budget:
+  max_tokens: 800
+  max_latency_ms: 4000
+  max_cost_usd: 0.05
+
+drift_pass_rate_threshold: 0.10
+drift_latency_threshold_pct: 0.30
+baseline_window: 50
+recent_window: 20
