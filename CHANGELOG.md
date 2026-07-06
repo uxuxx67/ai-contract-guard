@@ -1,5 +1,7 @@
 # Changelog
 
+*[Русская версия](CHANGELOG.ru.md)*
+
 ## [0.1.0] - 2026-07-06
 ### Added
 - Initial release: contract model, validator, SQLite-backed history storage
