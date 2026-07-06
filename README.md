@@ -1,5 +1,7 @@
 # AI Contract Guard
 
+*[Русская версия](README.ru.md)*
+
 Contract testing for LLM integrations — the missing safety net between your prompts and production. Define a **contract** for what a model response must look like (schema, required fields, forbidden patterns, tone, cost/latency budget), then let AI Contract Guard catch silent drift when a provider quietly changes model behavior, auto-generate regression tests from real failures, and gate CI/CD deploys before a bad prompt or model swap reaches users.
 
 ## Why
