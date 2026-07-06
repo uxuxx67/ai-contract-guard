@@ -1,5 +1,7 @@
 # Contributing to AI Contract Guard
 
+*[Русская версия](CONTRIBUTING.ru.md)*
+
 Thanks for considering a contribution! This project favors explicit, auditable rules over opaque scoring — every validation failure should be traceable to a specific contract rule.
 
 ## Adding a validation rule type
